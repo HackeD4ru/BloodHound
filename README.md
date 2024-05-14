@@ -8,6 +8,7 @@ Supports most, but not all BloodHound (SharpHound) features. Currently GPO local
 # Installation and usage
 
 You can install the ingestor via pip with 
+    
      pip install bloodhound
 or by cloning this repository and running pip install . from the project directory. BloodHound.py requires impacket, ldap3 and dnspython to function.
 
