@@ -40,12 +40,12 @@ You can override some of the automatic detection options, such as the hostname o
 # Docker usage
 Build container
 
-   docker build -t bloodhound 
+       docker build -t bloodhound         
 
 Run container
 
-   docker run -v ${PWD}:/bloodhound-data -it bloodhound
+       docker run -v ${PWD}:/bloodhound-data -it bloodhound
 
-After that you can run bloodhound-python inside the container, all data will be stored in the path from where you start the container.
+    After that you can run bloodhound-python inside the container, all data will be stored in the path from where you start the container.
 # Credits
 BloodHound.py was originally written by Dirk-jan Mollema, Edwin van Vliet and Matthijs Gielen from Fox-IT (NCC Group). BloodHound.py is currently maintained by Dirk-jan Mollema from Outsider Security. The implementation and data model is based on the original tool from SpecterOps. Many thanks to everyone who contributed by testing, submitting issues and pull requests over the years.
