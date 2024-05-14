@@ -3,7 +3,7 @@ Limitations
 
 BloodHound.py currently has the following limitations:
 
-    Supports most, but not all BloodHound (SharpHound) features. Currently GPO local groups are not supported, all other collection methods are implemented.
+Supports most, but not all BloodHound (SharpHound) features. Currently GPO local groups are not supported, all other collection methods are implemented.
 
 Installation and usage
 
