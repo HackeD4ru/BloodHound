@@ -1,53 +1,61 @@
-# BloodHound
-# Limitations
+# Latest Version of BloodHound Community Edition is Released
 
-BloodHound.py currently has the following limitations:
+For the latest version of BloodHound you may follow [this link to the BloodHound Community Edition repository](https://github.com/SpecterOps/BloodHound).
 
-Supports most, but not all BloodHound (SharpHound) features. Currently GPO local groups are not supported, all other collection methods are implemented.
+## Deprecation Notice
 
-# Installation and usage
+This repository will be archived in the near future.
 
-You can install the ingestor via pip with 
-    
-     pip install bloodhound
-or by cloning this repository and running pip install . from the project directory. BloodHound.py requires impacket, ldap3 and dnspython to function.
+<hr />
 
-The installation will add a command line tool bloodhound-python to your PATH.
+[![Build](https://github.com/BloodHoundAD/BloodHound/actions/workflows/build.yml/badge.svg)](https://github.com/BloodHoundAD/BloodHound/actions/workflows/build.yml)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/BloodHoundAD/BloodHound)](https://github.com/BloodHoundAD/BloodHound/releases/latest)
+![GitHub all releases](https://img.shields.io/github/downloads/BloodHoundAD/BloodHound/total)
 
- To use the ingestor, at a minimum you will need credentials of the domain you're logging in to. You will need to specify the -u option with a username of this domain (or username@domain for a user in a trusted domain). If you have your DNS set up properly and the AD domain is in your DNS search list, then BloodHound.py will automatically detect the domain for you. If not, you have to specify it manually with the -d option.
+# Getting Started with BloodHound
 
-By default BloodHound.py will query LDAP and the individual computers of the domain to enumerate users, computers, groups, trusts, sessions and local admins. If you want to restrict collection, specify the --collectionmethod parameter, which supports the following options (similar to SharpHound):
+To get started with BloodHound, check out the [BloodHound docs.](https://bloodhound.readthedocs.io/en/latest/index.html)
 
-Default - Performs group membership collection, domain trust collection, local admin collection, and session collection
-Group - Performs group membership collection
- LocalAdmin - Performs local admin collection
-RDP - Performs Remote Desktop Users collection
-DCOM - Performs Distributed COM Users collection
-Container - Performs container collection (GPO/Organizational Units/Default containers)
-PSRemote - Performs Remote Management (PS Remoting) Users collection
-DCOnly - Runs all collection methods that can be queried from the DC only, no connection to member hosts/servers needed. This is equal to Group,Acl,Trusts,ObjectProps,Container
-Session - Performs session collection
-Acl - Performs ACL collection
-Trusts - Performs domain trust enumeration
-LoggedOn - Performs privileged Session enumeration (requires local admin on the target)
-ObjectProps - Performs Object Properties collection for properties such as LastLogon or PwdLastSet
-All - Runs all methods above, except LoggedOn
-Experimental - Connects to individual hosts to enumerate services and scheduled tasks that may have stored credentials
+# About BloodHound
 
-Multiple collectionmethods should be separated by a comma, for example: -c Group,LocalAdmin
+BloodHound is a single page Javascript web application, built on top of [Linkurious](http://linkurio.us/), compiled with [Electron](http://electron.atom.io/), with a [Neo4j](https://neo4j.com/) database fed by a C# data collector.
 
-You can override some of the automatic detection options, such as the hostname of the primary Domain Controller if you want to use a different Domain Controller with -dc, or specify your own Global Catalog with -gc
-# Docker usage
-Build container
+BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory or Azure environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. Defenders can use BloodHound to identify and eliminate those same attack paths. Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory or Azure environment.
 
-    docker build -t bloodhound         
+BloodHound was created by [@_wald0](https://www.twitter.com/_wald0), [@CptJesus](https://twitter.com/CptJesus), and [@harmj0y](https://twitter.com/harmj0y).
 
-Run container
+BloodHound is maintained by the [BloodHound Enterprise](https://bloodhoundenterprise.io/) team.
 
-    docker run -v ${PWD}:/bloodhound-data -it bloodhound
+# About BloodHound Enterprise
 
-After that you can run bloodhound-python inside the container, all data will be stored in the path from where you start the container.
-# Credits
-BloodHound.py was originally written by Dirk-jan Mollema, Edwin van Vliet and Matthijs Gielen from Fox-IT (NCC Group). BloodHound.py is currently maintained by Dirk-jan Mollema from Outsider Security. The implementation and data model is based on the original tool from SpecterOps. Many thanks to everyone who contributed by testing, submitting issues and pull requests over the years.
-# Clone 
-    https://github.com/dirkjanm/BloodHound.py.git
+[BloodHound Enterprise](https://bloodhoundenterprise.io/) is an Attack Path Management solution that continuously maps and quantifies Active Directory Attack Paths. You can remove millions, even billions of Attack Paths within your existing architecture and eliminate the attacker’s easiest, most reliable, and most attractive techniques.
+
+# Downloading BloodHound Binaries
+Pre-Compiled BloodHound binaries can be found [here](https://github.com/BloodHoundAD/BloodHound/releases). 
+
+The rolling release will always be updated to the most recent source. Tagged releases are considered "stable" but will likely not have new features or fixes.
+
+# Creating example data
+
+A sample database generator can be found [here](https://github.com/BloodHoundAD/BloodHound-Tools/tree/master/DBCreator)
+
+You can create your own example Active Directory environment using [BadBlood](https://github.com/davidprowe/BadBlood).
+
+# License
+
+BloodHound uses graph theory to reveal hidden relationships and
+attack paths in an Active Directory environment.
+Copyright (C) 2016-2023 Specter Ops Inc.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
