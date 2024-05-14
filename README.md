@@ -14,7 +14,7 @@ or by cloning this repository and running pip install . from the project directo
 
 The installation will add a command line tool bloodhound-python to your PATH.
 
-To use the ingestor, at a minimum you will need credentials of the domain you're logging in to. You will need to specify the -u option with a username of this domain (or username@domain for a user in a trusted domain). If you have your DNS set up properly and the AD domain is in your DNS search list, then BloodHound.py will automatically detect the domain for you. If not, you have to specify it manually with the -d option.
+ To use the ingestor, at a minimum you will need credentials of the domain you're logging in to. You will need to specify the -u option with a username of this domain (or username@domain for a user in a trusted domain). If you have your DNS set up properly and the AD domain is in your DNS search list, then BloodHound.py will automatically detect the domain for you. If not, you have to specify it manually with the -d option.
 
 By default BloodHound.py will query LDAP and the individual computers of the domain to enumerate users, computers, groups, trusts, sessions and local admins. If you want to restrict collection, specify the --collectionmethod parameter, which supports the following options (similar to SharpHound):
 
@@ -49,3 +49,5 @@ Run container
 After that you can run bloodhound-python inside the container, all data will be stored in the path from where you start the container.
 # Credits
 BloodHound.py was originally written by Dirk-jan Mollema, Edwin van Vliet and Matthijs Gielen from Fox-IT (NCC Group). BloodHound.py is currently maintained by Dirk-jan Mollema from Outsider Security. The implementation and data model is based on the original tool from SpecterOps. Many thanks to everyone who contributed by testing, submitting issues and pull requests over the years.
+# Clone 
+    https://github.com/dirkjanm/BloodHound.py.git
